@@ -1,0 +1,68 @@
+/* 清除页面所有元素的内外边距 */
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body,html{
+	width: 100%;
+	height: 100%;
+}
+
+section{
+	width: 100%;
+	height: 100%;
+	background: #0099CC;
+	overflow: hidden;/* 隐藏溢出区域 */
+	/*
+	 animation:动画的声明
+	 bg:动画名称，自定义
+	 10s：动画响应时间
+	 linear:动画的类型  线性变化
+	 infinite:无限执行动画
+	 * */
+	animation: bg 10s linear infinite;
+	position: relative;/* 父标签使用相对定位 */
+}
+/* 动画的设计 */
+@keyframes bg{
+	0%{
+		background: #0099CC;
+	}
+	33%{
+		background: #000000;
+	}
+	66%{
+		background: #0099CC;
+	}
+	100%{
+		background: #000000;
+	}
+}
+
+div{
+	width: 300%;
+	height: 100%;
+	position: absolute;/* 子标签使用绝对定位 */
+}
+div:nth-child(1){
+	background: url(../img/cloud_one.png);
+	animation: cloud 15s linear infinite;
+}
+div:nth-child(2){
+	background: url(../img/cloud_two.png);
+	animation: cloud 20s linear infinite;
+}
+div:nth-child(3){
+	background: url(../img/cloud_three.png);
+	animation: cloud 25s linear infinite;
+}
+
+@keyframes cloud{
+	from{
+		left: 0px;
+	} 
+	to{
+		left:-200%;
+	}
+}
